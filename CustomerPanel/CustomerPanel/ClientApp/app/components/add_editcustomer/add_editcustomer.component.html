@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+</head>
+<body>
+
+    <br />
+    <br />
+
+    <div class="col-md-7 col-md-offset-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title"></h3>
+                <hr />
+                <h3 class="text-center">Müşteri Ekleme Güncelleme</h3>
+                <div class="panel-body">
+                    <form [formGroup]="customerForm" (ngSubmit)="save()" #formDir="ngForm" novalidate>
+                        <fieldset>
+                            <div class="form-group">
+                                <input class="form-control" type="text" placeholder="Müşteri Adı" formControlName="customerName">
+                                <span class="text-danger" *ngIf="customerForm.hasError('required', 'customerName') && formDir.submitted">
+                                    Müşteri Adı Gereklidir.
+                                </span>
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" type="text" placeholder="Email" formControlName="email">
+                                <span class="text-danger" *ngIf="customerForm.hasError('required', 'email') && formDir.submitted">
+                                    Email Gereklidir.
+                                </span>
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" type="text" placeholder="Adres" formControlName="adress">
+                                <span class="text-danger" *ngIf="customerForm.hasError('required', 'adress') && formDir.submitted">
+                                    Adres Gereklidir.
+                                </span>
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" type="text" placeholder="Web Site" formControlName="webSite" data-val="true">
+                                <span class="text-danger" *ngIf="customerForm.hasError('required', 'webSite') && formDir.submitted">
+                                    Website Gereklidir.
+                                </span>
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" type="text" formControlName="phone" placeholder="Telefon" data-val="true">
+                                <span class="text-danger" *ngIf="customerForm.hasError('required', 'phone') && formDir.submitted">
+                                    Telefon Gereklidir.
+                                </span>
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" type="text" formControlName="taxNumber" placeholder="Vergi Numarası" data-val="true">
+                                <span class="text-danger" *ngIf="customerForm.hasError('required', 'taxNumber') && formDir.submitted">
+                                    Vergi Numarası Gereklidir.
+                                </span>
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" type="text" formControlName="postCode" placeholder="Posta Kodu" data-val="true">
+                                <span class="text-danger" *ngIf="customerForm.hasError('required', 'postCode') && formDir.submitted">
+                                    Posta Kodu Gereklidir.
+                                </span>
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" type="text" formControlName="customerSector" placeholder="Sektör" data-val="true">
+                                <span class="text-danger" *ngIf="customerForm.hasError('required', 'customerSector') && formDir.submitted">
+                                    Sektör Gereklidir.
+                                </span>
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" type="text" formControlName="authorizedPerson" placeholder=" Yetkili Kişi" data-val="true">
+                                <span class="text-danger" *ngIf="customerForm.hasError('required', 'authorizedPerson') && formDir.submitted">
+                                    Yetkili Kişi Gereklidir.
+                                </span>
+                            </div>
+                            <br />
+                            <input class="btn btn-lg btn-success btn-block" type="submit" value="Kayıt">
+                            <br />
+
+                        </fieldset>
+                    </form>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Register</title>
+</head>
+<body>
+
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+
+    <div class="col-md-7 col-md-offset-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title"></h3>
+                <hr />
+                <h3 class="text-center">Kayıt</h3>
+                <div class="panel-body">
+                    <form [formGroup]="userForm" (ngSubmit)="save()" #formDir="ngForm" novalidate>
+                        <fieldset>
+                            <div class="form-group">
+                                <input class="form-control" type="text" placeholder="Kullanıcı Adı" formControlName="UserName">
+                                <span class="text-danger" *ngIf="userForm.hasError('required', 'UserName') && formDir.submitted">
+                                    Kullanıcı adı boş bırakılamaz.
+                                </span>
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" type="text" placeholder="Şifre" formControlName="Password">
+                                <span class="text-danger" *ngIf="userForm.hasError('required', 'Password') && formDir.submitted">
+                                    Şifre boş bırakılamaz.
+                                </span>
+                            </div>
+
+                            <br />
+                            <input class="btn btn-lg btn-success btn-block" type="submit" value="Kayıt">
+                            <br />
+
+                        </fieldset>
+                    </form>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <br />
+
+
+    <br />
+    <br />
+
+
+</body>
+</html>

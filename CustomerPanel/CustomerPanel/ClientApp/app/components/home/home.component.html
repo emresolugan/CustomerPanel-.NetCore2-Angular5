@@ -1,0 +1,41 @@
+﻿<h1>Customer Panel</h1>
+<p>Bütün müşteri listesi...</p>
+<p *ngIf="!custList"><em>Loading...</em></p>
+<p>
+    <a [routerLink]="['/addcustomer']">Müşteri Ekle</a>
+</p>
+<table class='table' *ngIf="custList">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Müşteri Adı</th>
+            <th>Email</th>
+            <th>Adres</th>
+            <th>WebSite</th>
+            <th>Telefon</th>
+            <th>Vergi Numarası</th>
+            <th>Posta Kodu</th>
+            <th>Sektör</th>
+            <th>Yetkili Kişi</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let cust of custList">
+            <td>{{ cust.customerID }}</td>
+            <td>{{ cust.customerName }}</td>
+            <td>{{ cust.email }}</td>
+            <td>{{ cust.adress }}</td>
+            <td>{{ cust.webSite }}</td>
+            <td>{{ cust.phone }}</td>
+            <td>{{ cust.taxNumber }}</td>
+            <td>{{ cust.postCode }}</td>
+            <td>{{ cust.customerSector }}</td>
+            <td>{{ cust.authorizedPerson }}</td>
+            <td>
+            <td>
+                <a [routerLink]="['/customer/edit/', cust.customerID]">Güncelle</a> |
+                <a [routerLink]="" (click)="delete(cust.customerID)">Sil</a>
+            </td>
+        </tr>
+    </tbody>
+</table>
